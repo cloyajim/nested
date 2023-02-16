@@ -24,6 +24,13 @@ class ParentMusicGroupAdapter : ListAdapter<MusicGroup, RecyclerView.ViewHolder>
 
         with(holder as ViewHolder){
             binding.tvParentName.text = musicGroup.name
+
+            val childAdapter = ChildSongAdapter()
+            childAdapter.submitList(musicGroup.songs.shuffled())
+            binding.rvChildSong.apply {
+                setHasFixedSize(true)
+                adapter = childAdapter
+            }
         }
     }
 

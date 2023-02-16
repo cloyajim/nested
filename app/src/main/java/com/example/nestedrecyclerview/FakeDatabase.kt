@@ -24,6 +24,6 @@ object FakeDatabase {
             MusicGroup("Basados en tus gustos:", songList),
         )
 
-        return musicGroupList
+        return musicGroupList.shuffled()
     }
 }
