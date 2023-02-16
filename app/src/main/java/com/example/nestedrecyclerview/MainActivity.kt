@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getData() {
-
+        val data = FakeDatabase.getAllMusic()
+        parentAdapter.submitList(data)
     }
 }
